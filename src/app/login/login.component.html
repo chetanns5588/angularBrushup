@@ -1,0 +1,25 @@
+<div class="section">
+    <h2 class="text-center header">Login</h2>
+
+    <mat-card>
+        <mat-card-content>
+            <form [formGroup]="loginForm" (ngSubmit)="postdata(loginForm)" autocomplete="off">
+                <mat-form-field class="full-width-input">
+                    <input matInput placeholder="Email" name="email" formControlName="email" autocomplete="off"
+                        required>
+                    <mat-error>
+                        Please provide a valid email address
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field class="full-width-input">
+                    <input matInput placeholder="Password" name="password" formControlName="password" autocomplete="off"
+                        required>
+                    <mat-error>
+                        Please provide a valid email password
+                    </mat-error>
+                </mat-form-field>
+                <button type="submit" [disabled]="!loginForm.valid" mat-raised-button color="primary">Login</button>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>
